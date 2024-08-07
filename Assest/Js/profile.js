@@ -161,3 +161,5 @@ document.querySelector('.logoutArea').addEventListener('click', () => {
         document.querySelector('.logoutArea i').className = 'fa-solid fa-angle-down'
     }
 })
+
+document.querySelector('title').innerHTML = `${sessionStorage.getItem('get_user_name')} ||  Profile`;

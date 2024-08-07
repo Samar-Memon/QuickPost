@@ -66,12 +66,12 @@ let postsCollection = collection(db, 'All_Posts');
 // Get loader
 let loader = document.querySelector('.loader');
 let strRef;
-uploadBtn.addEventListener('click', async() => {
+uploadBtn.addEventListener('click', async(e) => {
     let Post_Title_trim = post_title.value.trim().toLowerCase();
     let Post_Desc_trim = post_desc.value.trim().toLowerCase();
     if(new_post_input.files.length > 0 && Post_Title_trim.length > 0 && Post_Desc_trim.length > 0){
         if(new_post_input.files[0].type.startsWith('image/')){
-
+            e.target.disabled = true
             loader.style.display = 'block'
             closePostBar.style.display = 'none'
             strRef = ref(storage, `${sessionStorage.getItem('get_user_email')}/${new_post_input.files[0].name}`)
@@ -95,6 +95,7 @@ uploadBtn.addEventListener('click', async() => {
                     upload_post_area.style.display = 'none'
                     // location.reload()
                     get_posts()
+            e.target.disabled = false
 
                     }, 500)
 

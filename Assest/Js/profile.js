@@ -120,11 +120,9 @@ uploadBtn.addEventListener('click', async(e) => {
 })
 
 const get_posts = async() => {
-    document.querySelector('.loader').style.display = 'block'
     const querySnapshot = await getDocs(postsCollection);
     posts_area.innerHTML = '';
     querySnapshot.forEach((doc) => {
-        document.querySelector('.loader').style.display = 'none'
         if(doc.data().userEmail == sessionStorage.getItem('get_user_email')){
             posts_area.innerHTML += `<div class="own_post"><img src="${doc.data().post_URL}" id="${doc.id}" alt="${doc.id}"> <div class="rightClick"><button>Delete Post</button></div></div>`
         }

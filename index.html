@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Assest/Css/index.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="contentBox">
+        <h1>WellCome to <span>QUICK POST</span></h1>
+        <p>This <span>QUICK POST</span> is built from <span>FireBase (DataBse)</span> in which you can <span>Upload</span> any <span>Favourite POSTS</span>, I Hope you'll definitely <span>Upload</span> your <span>Favourite POSTS</span> to this <span>WEB APP</span>.</p>
+        <h2>NOTE: Please Fill this Form and <span>Upload</span> your <span>Favourite POSTS</span>.</h2>
+    </div>
+
+    <div class="formBox">
+        <div class="signupArea">
+            <h1>Create New Account</h1>
+            <input type="text" placeholder="Create User Name" id="userNameInp">
+            <input type="email" placeholder="Enter User Email" id="signupEmailInp">
+            <input type="password" placeholder="Create New Password" id="signupPasswordInp">
+            <label for="add_profile_image">Click Here & Upload Profile Pic</label>
+            <input type="file" accept="image/" id="add_profile_image" style="display: none;">
+            <button id="google_btn"><img src="https://freepngimg.com/thumb/google/67058-logo-search-google-icon-free-clipart-hq.png"> Continue with GOOGLE</button>
+            <button id="signup_btn">Sign Up</button>
+            <p>Have an already <a id="loginJump">Account?</a></p>
+        </div>
+        <div class="loginArea">
+            <h1>Login Your Account</h1>
+            <input type="email" placeholder="Enter User Email" id="loginEmailInp">
+            <input type="password" placeholder="Create New Password" id="loginPasswordInp">
+            <button id="login_btn">Log In</button>
+            <p>Don't have an <a id="signupJump">Account?</a></p>
+        </div>
+        <div class="loader"></div>
+    </div>
+
+
+    <script type="module" src="./Assest/Js/index.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+</html>

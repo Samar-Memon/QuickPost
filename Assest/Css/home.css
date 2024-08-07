@@ -1,0 +1,233 @@
+/* get font to Browse */
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jersey+25+Charted&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #ccc;
+}
+body{
+    background-color: #444;
+    color: #ccc;
+}
+nav{
+    width: 100%;
+    height: 10vh;
+    border-bottom: 2px solid #ccc;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 15px;
+    background-color: #444;
+    z-index: 100;
+}
+nav a{
+    color: #ccc;
+    text-decoration: none;
+}
+nav h1{
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+}
+nav h1 span{
+    color: orangered;
+    font-size: 40px;
+}
+.logoutArea{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+}
+.downArea{
+    width: 100%;
+    padding: 15px;
+    border-radius: 7px;
+    position: absolute;
+    background-color: #000000ab;
+    top: 100%;
+    right: 0;
+    display: none;
+}
+.area{
+    display: none;
+}
+.show{
+    display: block;
+}
+.downArea li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+    background-color: #ccc;
+    color: #444;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+.downArea li:hover{
+    background-color: #444;
+    color: #ccc;
+}
+.logoutArea img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+/* sideBar */
+.sideBar{
+    border-right: 2px solid #ccc;
+    width: 80px;
+    height: 90vh;
+    position: fixed;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sideBar a{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: #ccc;
+    text-decoration: none;
+}
+
+section{
+    position: absolute;
+    top: 10vh;
+    left: 0px; /* Adjust to account for sidebar */
+    width: 100%;
+    padding: 10px;
+}
+
+.post{
+    border: 2px solid #ccc;
+    max-width: 700px;
+    width: 100%;
+    margin: 10px auto;
+    height: 90vh;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.post_top{
+    border-bottom: 1px solid #ccc;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ccc;
+    font-family: 20px;
+    padding-inline: 10px;
+}
+.post_top div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.post_top i{
+    font-size: 30px;
+    cursor: pointer;
+}
+.post_top span{
+    text-transform: capitalize;
+}
+.post_top img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 3px;
+}
+.post-details{
+    width: 100%;
+    max-height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    color: #ccc;
+    padding: 5px;
+    overflow: auto;
+    text-transform: capitalize;
+}
+.title{
+    font-size: 20px;
+    border-bottom: 2px solid #ccc;
+    text-transform: capitalize;
+}
+.desc{
+    font-size: 13px;
+}
+.post_body{
+    width: 100%;
+    height: 100%;
+}
+.post_body img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media (max-width: 890px) {
+    .sideBar{
+        display: none;
+    }
+    .area{
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .logoutArea{
+        font-size: 18px;
+    }
+    .logoutArea img{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    --d:22px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    color: orangered;
+    margin: 10% auto;
+    display: none;
+    box-shadow:
+      calc(1*var(--d))      calc(0*var(--d))     0 0,
+      calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
+      calc(0*var(--d))      calc(1*var(--d))     0 2px,
+      calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+      calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+      calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+      calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+    animation: l27 1s infinite steps(8);
+  }
+  @keyframes l27 {
+    100% {transform: rotate(1turn)}
+  }

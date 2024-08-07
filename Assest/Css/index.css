@@ -1,0 +1,149 @@
+/* get font to Browse */
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jersey+25+Charted&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+body{
+    background-color: #444;
+    color: #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+.contentBox,.formBox{
+    max-width: 500px;
+    width: 100%;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.formBox{
+    align-items: center;
+    box-shadow: 4px 5px 20px #ccc;
+    position: relative;
+}
+.signupArea,.loginArea{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.loginArea{
+    display: none;
+}
+.formBox input{
+    padding: 20px 3px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline-color: #ccc;
+    color: #ccc;
+    font-size: 18px;
+    width: 100%;
+}
+.formBox label{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    background-color: orangered;
+    color: #ccc;
+    border: 2px solid orangered;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.formBox label:hover,.formBox button:hover{
+    background-color: transparent;
+    color: #ccc;
+}
+.formBox button{
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+::placeholder{
+    color: #ccc;
+}
+.contentBox span{
+    color: orangered;
+}
+.contentBox p{
+    font-size: 18px;
+}
+
+@media (max-width: 1000px) {
+    .contentBox p,.contentBox h2{
+        display: none;
+    }
+    .contentBox{
+        align-items: center;
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    --d:22px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    color: orangered;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    box-shadow:
+      calc(1*var(--d))      calc(0*var(--d))     0 0,
+      calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
+      calc(0*var(--d))      calc(1*var(--d))     0 2px,
+      calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+      calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+      calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+      calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+    animation: l27 1s infinite steps(8);
+  }
+  @keyframes l27 {
+    100% {transform: rotate(1turn)}
+  }
+
+  .swal2-title{
+    font-size: 22px;
+  }
+  .swal2-confirm{
+    background-color: orangered;
+  }
+  .swal2-popup{
+    background-color: #ccc;
+  }
+  .formBox a{
+    color: orangered;
+    cursor: pointer;
+  }
+  .formBox a:hover{
+    text-decoration: underline;
+  }
+  #google_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  #google_btn img{
+    width: 30px;
+  }

@@ -1,0 +1,204 @@
+.user_profile{
+    border: 2px solid #ccc;
+    max-width: 700px;
+    width: 100%;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.top{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-inline: 10px;
+    font-size: 20px;
+    color: #ccc;
+}
+.top img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+.top button{
+    padding: 5px 15px;
+    background-color: transparent;
+    color: #ccc;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 30px;
+}
+.top button:hover{
+    background-color: #ccc;
+    color: #444;
+}
+
+/* posts_area */
+.posts_area{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.own_post{
+    height: 230px;
+    width: 224px;
+    border: 1px dashed #ccc;
+    position: relative;
+}
+.own_post:hover .rightClick{
+    display: flex;
+}
+.rightClick{
+    padding-inline: 10px;
+    width: 80%;
+    height: 80px;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ccc;
+    color: #444;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.rightClick button{
+    width: 100%;
+    height: 80%;
+    font-size: 18px;
+    background-color: #444;
+    color: #ccc;
+    border: 2px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.rightClick button:hover{
+    background-color: transparent;
+    color: #444;
+}
+.own_post img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.upload_post_area{
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 2px 3px 20px #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #444;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #ccc;
+}
+.upload_post_area label,#uploadBtn{
+    width: 100%;
+    height: 50px;
+    background-color: orangered;
+    border: 2px solid orangered;
+    color: #ccc;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#uploadBtn{
+    background-color: #ccc;
+    color: #444;
+    border-color: #ccc;
+}
+#post_title{
+    padding: 18px 10px;
+    background-color: transparent;
+    color: #ccc;
+    font-size: 17px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#post_desc{
+    width: 100%;
+    min-height: 60px;
+    padding: 20px 10px;
+    font-size: 17px;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+::placeholder{
+    color: #ccc;
+}
+.upload_post_area label:hover,#uploadBtn:hover{
+    background-color: transparent;
+    color: #ccc;
+}
+.upload_post_area i.fa-xmark{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 18px;
+    background-color: red;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    --d:22px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    color: orangered;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    box-shadow:
+      calc(1*var(--d))      calc(0*var(--d))     0 0,
+      calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
+      calc(0*var(--d))      calc(1*var(--d))     0 2px,
+      calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+      calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+      calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+      calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+    animation: l27 1s infinite steps(8);
+  }
+  @keyframes l27 {
+    100% {transform: rotate(1turn)}
+  }
+  .swal2-title{
+    font-size: 22px;
+  }
+  .swal2-confirm{
+    background-color: orangered;
+  }
+  .swal2-popup{
+    background-color: #ccc;
+  }

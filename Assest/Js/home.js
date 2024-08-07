@@ -58,3 +58,11 @@ document.querySelector('.logoutArea').addEventListener('click', () => {
 })
 
 
+
+
+document.getElementById('logout').addEventListener('click', () => {
+    location.href = './index.html'
+    sessionStorage.removeItem('get_user_name')
+    sessionStorage.removeItem('get_user_email')
+    sessionStorage.removeItem('get_user_image')
+});

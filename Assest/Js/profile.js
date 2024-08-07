@@ -124,26 +124,9 @@ const get_posts = async() => {
     posts_area.innerHTML = '';
     querySnapshot.forEach((doc) => {
         if(doc.data().userEmail == sessionStorage.getItem('get_user_email')){
-            posts_area.innerHTML += `<div class="own_post"><img src="${doc.data().post_URL}" id="${doc.id}" alt="${doc.id}"> <div class="rightClick"><button>Delete Post</button></div></div>`
+            posts_area.innerHTML += `<div class="own_post"><img src="${doc.data().post_URL}" id="${doc.id}" alt="${doc.id}"></div>`
         }
 });
-document.querySelectorAll('.rightClick').forEach(right => {
-            right.querySelector('button').addEventListener('click', async(e) => {
-                e.preventDefault()
-
-                let id = right.parentElement.querySelector('img').id;
-                let docCollection = doc(db, 'All_Posts', id)
-                await deleteDoc(docCollection);
-                deleteObject(strRef).then(() => {
-                    // File deleted successfully
-
-                }).catch((error) => {
-                    // Uh-oh, an error occurred!
-                });
-                get_posts()
-
-            })
-        })
 }
 
 window.onload = () => {
@@ -162,3 +145,10 @@ document.querySelector('.logoutArea').addEventListener('click', () => {
 })
 
 document.querySelector('title').innerHTML = `${sessionStorage.getItem('get_user_name')} ||  Profile`;
+
+document.getElementById('logout').addEventListener('click', () => {
+    location.href = './index.html'
+    sessionStorage.removeItem('get_user_name')
+    sessionStorage.removeItem('get_user_email')
+    sessionStorage.removeItem('get_user_image')
+});

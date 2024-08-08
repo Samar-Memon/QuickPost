@@ -28,7 +28,7 @@ querySnapshot.forEach((doc) => {
                     <span>${doc.data().userName}</span></div>
                     <div>
                     <i class="fa-regular fa-heart"></i>
-                    <div class="timeStamp">${getTimeDifference(doc.data().createdAt)}</div>
+                    <div class="timeStamp"></div>
                     </div>
             </div>
             <div class="post-details">
@@ -39,7 +39,11 @@ querySnapshot.forEach((doc) => {
                 <img src="${doc.data().post_URL}" alt="">
             </div>
         </div>`
+        if(getTimeDifference(doc.data().createdAt)){
+        document.querySelector('.timStamp').innerHTML = `${getTimeDifference(doc.data().createdAt)} day ago`
+        }
     }
+
 
 document.querySelectorAll('.fa-heart').forEach(h => {
     h.addEventListener('click', () => {
@@ -75,7 +79,11 @@ function getTimeDifference(date) {
     const postDate = new Date(date); // Client-side timestamp ko JavaScript date me convert karna
     const timeDiff = Math.abs(now - postDate);
     const diffDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    if(diffDays > 0){
     return diffDays;
+    }else{
+        return null;
+    }
   }
 
 

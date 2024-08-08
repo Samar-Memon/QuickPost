@@ -20,7 +20,7 @@ const getPosts = async() => {
 
     const querySnapshot = await getDocs(collection(db, "All_Posts"));
 querySnapshot.forEach((doc) => {
-    if(doc.data().userEmail != sessionStorage.getItem('get_user_email')){
+    // if(doc.data().userEmail != sessionStorage.getItem('get_user_email')){
     document.querySelector('.loader').style.display = 'none'
         document.querySelector('section').innerHTML += `<div class="post">
             <div class="post_top">
@@ -42,7 +42,7 @@ querySnapshot.forEach((doc) => {
         if(getTimeDifference(doc.data().createdAt)){
         document.querySelector('.timStamp').innerHTML = `${getTimeDifference(doc.data().createdAt)} day ago`
         }
-    }
+    // }
 
 
 document.querySelectorAll('.fa-heart').forEach(h => {

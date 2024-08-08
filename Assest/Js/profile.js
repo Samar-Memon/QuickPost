@@ -126,6 +126,13 @@ const get_posts = async() => {
     querySnapshot.forEach((doc) => {
         if(doc.data().userEmail == sessionStorage.getItem('get_user_email')){
             posts_area.innerHTML += `<div class="own_post"><img src="${doc.data().post_URL}" id="${doc.id}" alt="${doc.id}"></div>`
+            document.querySelector('.viewPostsArea').innerHTML+= `<div class="viewPost">
+                    <div class="viewPostTop">
+                        <div class="viewPostTitle"><strong>Title:</strong> <span>${doc.data().post_title}</span></div>
+                        <div class="viewPostDesc"><strong>Description:</strong> <span>${doc.data().post_desc}</span></div>
+                    </div>
+                    <img src="${doc.data().post_URL}" alt="">
+                </div>`
         }
 });
 }
@@ -153,3 +160,15 @@ document.getElementById('logout').addEventListener('click', () => {
     sessionStorage.removeItem('get_user_email')
     sessionStorage.removeItem('get_user_image')
 });
+
+
+document.getElementById('viewAllPosts').addEventListener('click', (e) => {
+    document.querySelector('.viewPostsArea').classList.toggle('view')
+    if(document.querySelector('.viewPostsArea').classList.contains('view')){
+        e.target.style.background = '#ccc'
+        e.target.style.color = '#444'
+    }else{
+        e.target.style.background = '#444'
+        e.target.style.color = '#ccc'
+    }
+})

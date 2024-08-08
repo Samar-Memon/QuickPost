@@ -114,10 +114,6 @@ nav h1 span{
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
 }
-.sideBar a:hover{
-    background-color: #0067fd;
-    color: #fff;
-}
 
 section{
     position: absolute;

@@ -17,6 +17,16 @@ import {
   getDownloadURL
 } from './firebase.js'
 
+import {
+  getFirestore,
+  collection,
+   addDoc,
+   db,
+   getDocs ,
+   doc,
+   deleteDoc
+} from './firebase.js'
+
 
 // get inputs
 
@@ -96,6 +106,17 @@ const func4SignUp = (e) => {
                   getDownloadURL(profileRef)
                   .then( async(url) => {
                     console.log(url);
+                    try {
+                      const docRef = await addDoc(collection(db, "users"), {
+                        userName: userNameValue,
+                        userEmail: signUpEmailValue,
+                        url
+                      });
+                      console.log("Document written with ID: ", docRef.id);
+                    } catch (e) {
+                      console.error("Error adding document: ", e);
+                    }
+
                     sessionStorage.setItem('get_user_image', url)
                   }).catch((err) => {
                     console.log(err);
@@ -143,13 +164,28 @@ const func4LoIn = (e) => {
 
     setTimeout(() => {
         signInWithEmailAndPassword(auth, loginEmailValue, loginPasswordValue)
-        .then((userCredential) => {
+        .then( async(userCredential) => {
           // Signed in
           const user = userCredential.user;
-          clearInput()
-        loader.style.display = 'none'
-        location.href = '/home.html'
-        sessionStorage.setItem('get_user_email', loginEmailValue)
+          const querySnapshot = await getDocs(collection(db, "users"));
+        querySnapshot.forEach((doc) => {
+          if(loginEmailValue == doc.data().userEmail){
+
+            console.log('UserName', doc.data().userName);
+            console.log('UserEmail', doc.data().userEmail);
+            console.log('ImageURL', doc.data().url);
+
+            let userName = doc.data().userName;
+            let userEmail = doc.data().userEmail;
+            let imageURL = doc.data().url;
+            sessionStorage.setItem('get_user_name', userName)
+            sessionStorage.setItem('get_user_email', userEmail)
+            sessionStorage.setItem('get_user_image', imageURL);
+            location.href = '/home.html' 
+          }
+        });
+          loader.style.display = 'none'
+        clearInput()
         e.target.disalbed = false
           // ...
         })

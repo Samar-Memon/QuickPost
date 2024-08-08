@@ -168,8 +168,10 @@ document.getElementById('viewAllPosts').addEventListener('click', (e) => {
     if(document.querySelector('.viewPostsArea').classList.contains('view')){
         e.target.style.background = '#ccc'
         e.target.style.color = '#444'
+        e.target.innerHTML = `<i class="fa-solid fa-eye"></i> Hide All Post`
     }else{
         e.target.style.background = '#444'
         e.target.style.color = '#ccc'
+        e.target.innerHTML = `<i class="fa-solid fa-eye-slash"></i> View All Post` 
     }
 })

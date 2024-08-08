@@ -42,24 +42,6 @@ querySnapshot.forEach((doc) => {
         if(getTimeDifference(doc.data().createdAt)){
         document.querySelector('.timStamp').innerHTML = `${getTimeDifference(doc.data().createdAt)} day ago`
         }
-        document.querySelectorAll('.post').forEach(post => {
-            post.querySelector('.post_body img').addEventListener('click', (e) => {
-                document.querySelector('.all').style.display = 'none'
-                document.querySelector('.openImageArea').style.display = 'flex'
-        
-                document.querySelector('.openImageArea img').src = e.target.src
-                document.querySelector('.openImageArea h1 strong').textContent = e.target.parentElement.parentElement.querySelector('.title').textContent
-                document.querySelector('.openImageArea p strong').textContent = e.target.parentElement.parentElement.querySelector('.desc').textContent
-
-        
-            })
-          })
-        
-          document.querySelector('.openImageArea i').addEventListener('click', (e) => {
-            e.target.parentElement.style.display = 'none'
-            document.querySelector('.all').style.display = 'flex'
-
-          })
     // }
     
 

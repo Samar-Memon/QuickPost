@@ -13,11 +13,11 @@
     height: 4px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #ccc;
+    background-color: #777;
 }
 body{
-    background-color: #444;
-    color: #ccc;
+    background-color: #fff;
+    color: #777;
 }
 nav{
     width: 100%;
@@ -28,11 +28,11 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding-inline: 15px;
-    background-color: #444;
+    background-color: #fff;
     z-index: 100;
 }
 nav a{
-    color: #ccc;
+    color: #777;
     text-decoration: none;
 }
 nav h1{
@@ -41,7 +41,7 @@ nav h1{
     font-size: 32px;
 }
 nav h1 span{
-    color: orangered;
+    color: #0067fd;
     font-size: 40px;
 }
 .logoutArea{
@@ -57,7 +57,7 @@ nav h1 span{
     padding: 15px;
     border-radius: 7px;
     position: absolute;
-    background-color: #000000ab;
+    background-color: #777000ab;
     top: 100%;
     right: 0;
     display: none;
@@ -73,14 +73,16 @@ nav h1 span{
     align-items: center;
     gap: 10px;
     list-style-type: none;
-    background-color: #ccc;
-    color: #444;
+    background-color: #777;
+    color: #fff;
     padding: 5px 10px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 .downArea li:hover{
-    background-color: #444;
-    color: #ccc;
+    background-color: #fff;
+    color: #777;
 }
 .logoutArea img{
     width: 45px;
@@ -108,8 +110,13 @@ nav h1 span{
     justify-content: center;
     align-items: center;
     font-size: 26px;
-    color: #ccc;
+    color: #777;
     text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.sideBar a:hover{
+    background-color: #0067fd;
+    color: #fff;
 }
 
 section{
@@ -122,23 +129,29 @@ section{
 
 .post{
     border: 2px solid #ccc;
+    border-radius: 10px;
     max-width: 700px;
     width: 100%;
-    margin: 10px auto;
     height: 90vh;
+    margin: 10px auto;
+    background-color: #fff;
     overflow: hidden;
-    margin-bottom: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.post:hover{
+    transform: scale(1.02);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 .post_top{
     border-bottom: 1px solid #ccc;
-    height: 10vh;
+    height: 10%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #ccc;
-    font-family: 20px;
-    padding-inline: 10px;
+    color: #777;
+    padding: 10px;
 }
 .post_top div{
     display: flex;
@@ -160,34 +173,37 @@ section{
 }
 .post-details{
     width: 100%;
-    max-height: 15%;
+    height: 10%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 5px;
-    color: #ccc;
-    padding: 5px;
-    overflow: auto;
-    text-transform: capitalize;
+    color: #777;
 }
 .title{
     font-size: 20px;
     border-bottom: 2px solid #ccc;
     text-transform: capitalize;
+    margin-bottom: 5px;
 }
 .desc{
-    font-size: 13px;
+    font-size: 14px;
 }
 .post_body{
     width: 100%;
-    height: 100%;
+    overflow: hidden;
+    height: 80%;
 }
 .post_body img{
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     object-position: center;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+.post_body img:hover{
+    transform: scale(1.05);
 }
 .all{
     display: flex;
@@ -241,7 +257,6 @@ section{
     color: #ccc;
 }
 
-
 @media (max-width: 890px) {
     .sideBar{
         display: none;
@@ -277,7 +292,7 @@ section{
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    color: orangered;
+    color: #0067fd;
     margin: 10% auto;
     display: none;
     box-shadow:

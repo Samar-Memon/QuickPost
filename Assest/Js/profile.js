@@ -170,8 +170,8 @@ document.getElementById('viewAllPosts').addEventListener('click', (e) => {
         e.target.style.color = '#444'
         e.target.innerHTML = `<i class="fa-solid fa-eye-slash"></i> Hide All Post`
     }else{
-        e.target.style.background = '#444'
-        e.target.style.color = '#ccc'
+        e.target.style.background = 'transparent'
+        e.target.style.color = '#777'
         e.target.innerHTML = `<i class="fa-solid fa-eye"></i> View All Post`
     }
 })

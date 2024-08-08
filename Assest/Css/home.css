@@ -185,12 +185,15 @@ section{
 .post_body img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: center;
     cursor: pointer;
 }
+.all{
+    display: flex;
+    flex-direction: column;
+}
 .openImageArea{
-    border: 2px solid red;
     width: 100%;
     height: 90%;
     position: fixed;
@@ -219,8 +222,8 @@ section{
     padding: 5px;
     width: 50%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: fill;
+    object-position: bottom;
 }
 .content{
     width: 50%;

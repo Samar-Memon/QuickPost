@@ -215,14 +215,14 @@ section{
     right: 5px;
 }
 .openImageArea img{
-    border: 2px solid red;
+    border: 1px dashed #ccc;
+    padding: 5px;
     width: 50%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 .content{
-    border: 2px solid white;
     width: 50%;
     height: 100%;
     padding: 20px;

@@ -26,7 +26,10 @@ querySnapshot.forEach((doc) => {
             <div class="post_top">
                 <div><img src="${doc.data().user_profile}" alt="">
                     <span>${doc.data().userName}</span></div>
+                    <div>
                     <i class="fa-regular fa-heart"></i>
+                    <div class="timeStamp">${getTimeDifference(doc.data().createdAt)}</div>
+                    </div>
             </div>
             <div class="post-details">
                 <div class="title">${doc.data().post_title}</div>
@@ -66,3 +69,29 @@ document.getElementById('logout').addEventListener('click', () => {
     sessionStorage.removeItem('get_user_email')
     sessionStorage.removeItem('get_user_image')
 });
+
+function getTimeDifference(date) {
+    const now = new Date();
+    const postDate = new Date(date); // Client-side timestamp ko JavaScript date me convert karna
+    const timeDiff = Math.abs(now - postDate);
+    const diffDays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    return diffDays;
+  }
+
+
+  document.querySelectorAll('.post').forEach(post => {
+    post.querySelector('.post_body img').addEventListener('click', (e) => {
+        document.querySelector('.openImageArea').style.display = 'flex'
+
+        document.querySelector('.openImageArea img').src = e.target.src
+        document.querySelector('.openImageArea h1 strong').textContent = e.target.parentElement.parentElement.querySelector('.title').textContent
+        document.querySelector('.openImageArea p strong').textContent = e.target.parentElement.parentElement.querySelector('.desc').textContent
+        
+
+    })
+  })
+
+  document.querySelector('.openImageArea i').addEventListener('click', (e) => {
+    e.target.parentElement.style.display = 'none'
+    
+  })

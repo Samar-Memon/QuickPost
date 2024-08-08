@@ -86,7 +86,8 @@ uploadBtn.addEventListener('click', async(e) => {
                         post_URL: url,
                         post_title: Post_Title_trim,
                         post_desc: Post_Desc_trim,
-                        user_profile: sessionStorage.getItem('get_user_image')
+                        user_profile: sessionStorage.getItem('get_user_image'),
+                        createdAt: new Date().toISOString(),
                     });
                     loader.style.display = 'none'
                     post_desc.value =''

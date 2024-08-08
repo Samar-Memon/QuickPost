@@ -191,7 +191,7 @@ section{
 }
 .all{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 .openImageArea{
     width: 100%;

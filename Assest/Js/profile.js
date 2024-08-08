@@ -164,6 +164,7 @@ document.getElementById('logout').addEventListener('click', () => {
 
 document.getElementById('viewAllPosts').addEventListener('click', (e) => {
     document.querySelector('.viewPostsArea').classList.toggle('view')
+    document.querySelector('.posts_area').classList.toggle('hide')
     if(document.querySelector('.viewPostsArea').classList.contains('view')){
         e.target.style.background = '#ccc'
         e.target.style.color = '#444'

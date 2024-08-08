@@ -148,6 +148,9 @@
 .view{
     display: block;
 }
+.hide{
+    display: none;
+}
 .viewPost{
     border: 2px solid #ccc;
     overflow: hidden;
